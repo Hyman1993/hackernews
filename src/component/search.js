@@ -8,12 +8,15 @@ class Search extends React.Component {
      render() {
 
         return (
-            <form>
+            <form onSubmit={this.props.onSearchSubmit}>
             {this.props.children} <input
               type="text"
               value={this.props.value}
               onChange={this.props.onChange}
             />
+            <button type="submit">
+              {this.props.children}
+            </button>
           </form>
         );
 
