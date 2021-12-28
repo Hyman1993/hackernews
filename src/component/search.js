@@ -5,6 +5,12 @@ class Search extends React.Component {
         super(props);
      }
 
+     componentDidMount() {
+      if(this.input) {
+         this.input.focus();
+      }
+    }
+
      render() {
 
         return (
@@ -13,6 +19,7 @@ class Search extends React.Component {
               type="text"
               value={this.props.value}
               onChange={this.props.onChange}
+              ref={(node) => { this.input = node; }}
             />
             <button type="submit">
               {this.props.children}
